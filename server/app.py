@@ -120,8 +120,8 @@ mlURL = 'http://178.128.239.183:5000/is_dab'
 def mine():
     values = request.get_json()
     required = ['address']
-    if not all(k in values for k in required):
-        return 'Missing values', 404
+        if not all(k in values for k in required):
+            return 'Missing values', 404
 
     req = requests.post(mlURL, json=values['dab_data'])
     print(req.text)
